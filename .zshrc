@@ -1,0 +1,1 @@
+/Users/gregwalsh/.config/.dotfiles/dots/shared/home//.zshrc

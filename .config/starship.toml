@@ -1,0 +1,242 @@
+format = """
+[▒▓](mantle)\
+$directory\
+[](fg:mantle bg:lavender)\
+$git_branch\
+$git_status\
+[ ](fg:lavender)\
+"""
+
+right_format = """
+$cmd_duration\
+$nodejs\
+$battery\
+"""
+#[░▒▓](#6272a4)\
+#palette = "catppuccin_macchiato"
+palette = "catppuccin_mocha"
+#palette = "catppuccin_frappe"
+
+# add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[❯❯](bold green)'
+# error_symbol = '[❯❯](bold red)'# The 'successcd_symbol' segment is being set to '➜' with the color 'bold green'
+
+# [username]
+# show_always = true
+# style_user = "bg:#282A36 fg:#bd93f9 bold"
+# style_root = "bg:#bd93f9 fg:#000000 italic"
+# format = '[ $user ]($style)'
+# disabled = false
+
+[directory]
+style = "fg:lavender bg:mantle"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[directory.substitutions]
+# "Documents" = "  "
+# "Downloads" = "  "
+# # "Music/" = "/"
+# "Pictures" = "  "
+# "/mnt/DATA" = "  "
+# "~/github.com/" = "http://github.com"
+
+[git_branch]
+symbol = ""
+style = "bg:lavender"
+format = '[[ $symbol $branch ](fg:mantle bg:lavender)]($style)'
+
+[git_status]
+style = "bg:lavender"
+format = '[[($all_status$ahead_behind )](fg:mantle bg:lavender)]($style)'
+
+[nodejs]
+symbol = ""
+format = '[[ $symbol($version)](fg:#ff5555)]($style)'
+
+[battery]
+format = '[ $percentage]($style)'
+
+[[battery.display]]
+threshold = 50
+style = 'fg:#50fa7b'
+
+
+[cmd_duration]
+min_time = 1000
+format = ' [$duration](bold yellow)'
+#
+# [time]
+# disabled = false
+# time_format = "%R" # Hour:Minute Format
+# style = "bg:#282A36 fg:blue bold"
+# format = '[[ $time ](bg:base fg:lavender bold)]($style)'
+
+
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+pyenv_version_name = true
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+
+[palettes.catppuccin_macchiato]
+rosewater = "#f4dbd6"
+flamingo = "#f0c6c6"
+pink = "#f5bde6"
+mauve = "#c6a0f6"
+red = "#ed8796"
+maroon = "#ee99a0"
+peach = "#f5a97f"
+yellow = "#eed49f"
+green = "#a6da95"
+teal = "#8bd5ca"
+sky = "#91d7e3"
+sapphire = "#7dc4e4"
+blue = "#8aadf4"
+lavender = "#b7bdf8"
+text = "#cad3f5"
+subtext1 = "#b8c0e0"
+subtext0 = "#a5adcb"
+overlay2 = "#939ab7"
+overlay1 = "#8087a2"
+overlay0 = "#6e738d"
+surface2 = "#5b6078"
+surface1 = "#494d64"
+surface0 = "#363a4f"
+base = "#24273a"
+mantle = "#1e2030"
+crust = "#181926"
+
+[palettes.catppuccin_frappe]
+Rosewater = "#dc8a78"
+Flamingo = "#dd7878"
+Pink = "#ea76cb"
+Mauve = "#8839ef"
+Red = "#d20f39"
+Maroon = "#e64553"
+Peach = "#fe640b"
+Yellow = "#df8e1d"
+Green = "#40a02b"
+Teal = "#179299"
+Sky = "#04a5e5"
+Sapphire = "#209fb5"
+Blue = "#1e66f5"
+Lavender = "#7287fd"
+Text = "#4c4f69"
+Subtext1 = "#5c5f77"
+Subtext0 = "#6c6f85"
+Overlay2 = "#7c7f93"
+Overlay1 = "#8c8fa1"
+Overlay0 = "#9ca0b0"
+Surface2 = "#acb0be"
+Surface1 = "#bcc0cc"
+Surface0 = "#ccd0da"
+Base = "#eff1f5"
+Mantle = "#e6e9ef"
+Crust = "#dce0e8"
+
