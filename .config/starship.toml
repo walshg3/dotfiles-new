@@ -1,5 +1,6 @@
 format = """
 [▒▓](mantle)\
+$python\
 $directory\
 [](fg:mantle bg:lavender)\
 $git_branch\
@@ -54,6 +55,11 @@ format = '[[ $symbol $branch ](fg:mantle bg:lavender)]($style)'
 [git_status]
 style = "bg:lavender"
 format = '[[($all_status$ahead_behind )](fg:mantle bg:lavender)]($style)'
+
+[python]
+symbol = ""
+style = "fg:green bg:mantle"
+format =  '[\( $symbol $virtualenv \)]($style)'
 
 [nodejs]
 symbol = ""
@@ -135,10 +141,6 @@ symbol = " "
 
 [package]
 symbol = " "
-
-[python]
-symbol = " "
-pyenv_version_name = true
 
 [rlang]
 symbol = "ﳒ "
