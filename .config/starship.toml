@@ -59,7 +59,8 @@ format = '[[($all_status$ahead_behind )](fg:mantle bg:lavender)]($style)'
 [python]
 symbol = ""
 style = "fg:green bg:mantle"
-format =  '[\( $symbol $virtualenv \)]($style)'
+#format =  '[$symbol \($virtualenv\)]($style)'
+format = '[${symbol}( \($virtualenv\) )]($style)'
 
 [nodejs]
 symbol = ""
