@@ -16,11 +16,14 @@ setopt appendhistory
 setopt share_history #share history between multiple instances of zsh
 setopt HIST_IGNORE_ALL_DUPS
 
-
 # Source environment
 if [ -f "$HOME"/.zshenv ]; then
 	source "$HOME"/.zshenv
 fi
+
+
+# source grc
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
 # Source aliases
 if [ -f "$HOME"/.aliases ]; then
@@ -80,7 +83,7 @@ if [ "$TMUX" = "" ]; then command -v tmux && tmux; fi
 # colorize
 
 source $ZSH/oh-my-zsh.sh
-
+source ~/.config/grc.zsh
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 #export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 #export LS_COLORS="$(vivid generate catppuccin-latte)"
@@ -151,6 +154,8 @@ alias l='eza -l'
 alias lsd='eza -d */'
 alias lla='eza -la'
 
+
+
 # Chroma Term
 # alias ssh="ct ssh"
 
@@ -168,3 +173,7 @@ alias vi="nvim"
 
 
 alias shopt='/Users/gregwalsh/git/Zshopt/shopt'
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export VISUAL=vim
+export EDITOR=vim
+

@@ -34,7 +34,6 @@ PV_WIDTH="${2}"  # Width of the preview pane (number of fitting characters)
 PV_HEIGHT="${3}"        # Height of the preview pane (number of fitting characters)
 IMAGE_CACHE_PATH="${4}" # Full path that should be used to cache image preview
 PV_IMAGE_ENABLED="${5}" # 'True' if image previews are enabled, 'False' otherwise.
-
 FILE_EXTENSION="${FILE_PATH##*.}"
 FILE_EXTENSION_LOWER="$(printf "%s" "$FILE_EXTENSION" | tr '[:upper:]' '[:lower:]')"
 
@@ -324,7 +323,8 @@ handle_mime() {
 		fi
 		if [[ "$(tput colors)" -ge 256 ]]; then
 			local pygmentize_format='terminal256'
-			local highlight_format='xterm256'
+			#local highlight_format='xterm256'
+			local highlight_format='ansi'
 		else
 			local pygmentize_format='terminal'
 			local highlight_format='ansi'
