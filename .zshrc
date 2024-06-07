@@ -1,11 +1,12 @@
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
+#FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 
 source ~/.zsh/catppuccin_frappe-zsh-syntax-highlighting.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export FZF_BASE=/opt/homebrew/bin/fzf
 export BAT_THEME="Catppuccin-frappe"
 #Enables history saving
@@ -54,18 +55,22 @@ source ~/.config/zsnap/zsh-snap/znap.zsh
 # oh my zsh plugins
 plugins=(
 git sudo web-search history macos zsh-navigation-tools zsh-interactive-cd
-web-search wd vscode urltools universalarchive tmux tig themes
+web-search wd vscode urltools universalarchive tig themes
 rsync ripgrep react-native pip nvm npm node ng gitignore
 github git-prompt git-flow fzf dotnet docker command-not-found
-colorize colored-man-pages brew zsh-ssh)
+colorize colored-man-pages brew ssh zsh-ssh zsh-autosuggestions zsh-syntax-highlighting eza)
 
-# zsh completions 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+source $ZSH/oh-my-zsh.sh
+
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
   autoload -Uz compinit
-  compinit
+    rm -f ~/.zcompdump; compinit
 fi
+
+
 
 if [ "$TMUX" = "" ]; then command -v tmux && tmux; fi
 
@@ -81,8 +86,6 @@ if [ "$TMUX" = "" ]; then command -v tmux && tmux; fi
 
 # ZSH_COLORIZE_TOOL="chroma"
 # colorize
-
-source $ZSH/oh-my-zsh.sh
 source ~/.config/grc.zsh
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 #export LS_COLORS="$(vivid generate catppuccin-macchiato)"
@@ -116,7 +119,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 
 
@@ -166,11 +169,6 @@ alias vi="nvim"
 # zstyle ':completion::complete:*' use-cache 1                    #enables completion caching
 # zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 # autoload -Uz compinit && compinit -i
-#if type brew &>/dev/null; then
-#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-#    autoload -Uz compinit
-#    compinit
-#fi
 
 
 alias shopt='/Users/gregwalsh/git/Zshopt/shopt'
