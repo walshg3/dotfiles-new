@@ -11,7 +11,7 @@ export FZF_BASE=/opt/homebrew/bin/fzf
 export BAT_THEME="Catppuccin-frappe"
 #Enables history saving
 HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTSIZE=10000
 SAVEHIST=$HISTSIZE
 setopt appendhistory
 setopt share_history #share history between multiple instances of zsh
