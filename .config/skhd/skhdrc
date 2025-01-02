@@ -24,8 +24,8 @@ default < cmd + alt + ctrl - t : /Applications/kitty.app/Contents/MacOS/kitty --
 alt - c : open -a 'Visual Studio Code'
 alt - m : open -a 'Spotify'
 alt - o : open -a 'Obsidian'
-alt - a : open -a 'Arc'
-alt - i : open -a 'iTerm'
+alt - b : open -a 'Arc'
+alt - t : open -a 'Ghostty'
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
@@ -163,10 +163,10 @@ default < shift + lalt - r : sketchybar --exit
 default < cmd - j : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
-default < lalt - t : yabai -m window --toggle float; \
+default < ctrl - t : yabai -m window --toggle float; \
           yabai -m window --grid 4:4:1:1:2:2; \
 
-default < shift + lalt - t : yabai -m window --toggle float;\
+default < shift + ctrl - t : yabai -m window --toggle float;\
           yabai -m window --grid 20:20:1:1:18:18; \
 
 
