@@ -56,7 +56,7 @@ source ~/.config/zsnap/zsh-snap/znap.zsh
 plugins=(
 git sudo web-search history macos zsh-navigation-tools zsh-interactive-cd
 web-search wd vscode urltools universalarchive tig themes
-rsync ripgrep react-native pip nvm npm node ng gitignore
+rsync react-native pip nvm npm node ng gitignore
 github git-prompt git-flow fzf dotnet docker command-not-found
 colorize colored-man-pages brew ssh zsh-ssh zsh-autosuggestions zsh-syntax-highlighting eza)
 
@@ -157,7 +157,7 @@ alias la='eza -la'
 alias l='eza -l'
 alias lsd='eza -d */'
 alias lla='eza -la'
-
+alias lsltr='eza -snew --icons'
 
 
 # Chroma Term
