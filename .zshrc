@@ -63,12 +63,12 @@ colorize colored-man-pages brew ssh zsh-ssh zsh-autosuggestions zsh-syntax-highl
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-    rm -f ~/.zcompdump; compinit
-fi
+#if type brew &>/dev/null; then
+#  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+#
+#  autoload -Uz compinit
+#    rm -f ~/.zcompdump; compinit
+#fi
 
 
 
