@@ -24,7 +24,7 @@ window-height = 50
 window-width = 150
 
 background-blur-radius = 20
-scrollback-limit = 10000000000
+scrollback-limit = 1000000
 font-size = 14
 confirm-close-surface = false
 #window-decoration = true

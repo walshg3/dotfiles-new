@@ -70,8 +70,9 @@ source $ZSH/oh-my-zsh.sh
 #    rm -f ~/.zcompdump; compinit
 #fi
 
-
-
+if [[ ! $(tmux list-sessions) ]]; then 
+  tmux
+fi
 if [ "$TMUX" = "" ]; then command -v tmux && tmux; fi
 
 # fastfetch
@@ -122,7 +123,15 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 source <(fzf --zsh)
 
 
-
+#if [[ -o interactive ]]; then
+#    if [[ -z "$TMUX" ]]; then
+#        if [[ -n "$VSCODE_WORKSPACE" ]]; then
+#            exec tmux new -A -t "$VSCODE_WORKSPACE"
+#        else
+#            exec tmux new -A -t default
+#        fi
+#    fi
+#fi
 
 # # Chroma Term
 # alias ssh="ct ssh"
