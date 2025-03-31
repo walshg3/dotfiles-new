@@ -1,15 +1,18 @@
 #!/usr/bin/env sh
-
+# requires brew install --cask font-sketchybar-app-font
 case $@ in
 
 "Brave Browser")
 	icon_result=":brave_browser:"
 	;;
+"company.thebrowser.Browser " | "The Browser Company" | "Arc")
+	icon_result=":arc:"
+	;;
 "Keyboard Maestro")
 	icon_result=":keyboard_maestro:"
 	;;
 "ChatGPT")
-	icon_result="􀒤"
+	icon_result=":openai:"
 	;;
 "Zed")
 	icon_result=":zed:"
