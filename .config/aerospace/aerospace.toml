@@ -52,6 +52,26 @@ outer.right =      12
   run = "move-node-to-workspace C"
 
 [[on-window-detected]]
+  if.app-id = "net.pulsesecure.Pulse-Secure"
+  run = ["layout floating"]
+
+[[on-window-detected]]
+  if.app-id = "us.zoom.xos"
+  run = ["layout floating"]
+
+[[on-window-detected]]
+  if.app-id = "com.microsoft.rdc.macos"
+  run = ["layout floating"]
+
+[[on-window-detected]]
+  if.app-id = "com.microsoft.Outlook"
+  run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+  if.app-id = "com.microsoft.teams2"
+  run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
 if.app-id = "com.apple.MobileSMS"
 run = ["layout floating"]
 
@@ -164,3 +184,16 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 alt-shift-r = ['exec-and-forget /opt/homebrew/bin/sketchybar --reload']
+
+[workspace-to-monitor-force-assignment]
+1 = 'LG QHD'
+2 = 'LG QHD'
+3 = 'LG QHD'
+4 = 'DELL P2723QE'
+B = 'LG QHG'
+C = 'LG QHG'
+M = 'LG QHG'
+N = 'LG QHG'
+T = 'LG QHG'
+V = 'LG QHG'
+
