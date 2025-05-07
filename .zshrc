@@ -13,9 +13,9 @@ setopt share_history #share history between multiple instances of zsh
 setopt HIST_IGNORE_ALL_DUPS
 
 # Source environment
-if [ -f "$HOME"/.zshenv ]; then
-	source "$HOME"/.zshenv
-fi
+#if [ -f "$HOME"/.zshenv ]; then
+#	source "$HOME"/.zshenv
+#fi
 
 # source grc
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
@@ -25,32 +25,25 @@ if [ -f "$HOME"/.aliases ]; then
   source ~/.aliases
 fi
 
-# Source functions
-if [ -f "$HOME"/.functions ]; then
-	source "$HOME"/.functions
-fi
 
 ##
 #
 # Znap plugin management
 #
 ##
-# Source zsh plugi# Download Znap, if it's not there yet.
+# Source zsh plugins
+# Download Znap, if it's not there yet.
 [[ -f ~/.config/zsnap/zsh-snap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/.config/zsnap/zsh-snap
-
 # Start znap
 source ~/.config/zsnap/zsh-snap/znap.zsh
-
-
-
 
 # oh my zsh plugins
 plugins=(
 git sudo macos zsh-navigation-tools zsh-interactive-cd
 wd universalarchive fzf colored-man-pages zsh-ssh
-zsh-autosuggestions zsh-syntax-highlighting eza)
+zsh-autosuggestions zsh-syntax-highlighting )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -63,7 +56,7 @@ if [ "$TMUX" = "" ]; then command -v tmux && tmux; fi
 
 
 source ~/.config/grc.zsh
-#export LS_COLORS="$(vivid generate catppuccin-mocha)"
+export LS_COLORS="$(vivid generate catppuccin-mocha)"
 #export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 #export LS_COLORS="$(vivid generate catppuccin-latte)"
 # export LS_COLORS="$(vivid generate snazzy)"
@@ -89,16 +82,12 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
-
-
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 source <(fzf --zsh)
 
 # # Chroma Term
 # alias ssh="ct ssh"
-
-
 
 #spaceship
 # source "/usr/local/opt/spaceship/spaceship.zsh"
@@ -112,18 +101,18 @@ eval $(thefuck --alias)
 # alias
 alias nmap='grc nmap'
 # alias cat='ccat'
-alias ls='eza -a --color=always --group-directories-first --icons'
+alias ls='eza -a --group-directories-first --icons'
 #alias ls='eza --icons'
-alias ll='eza -l'
+#alias ll='eza -l'
 # sort by size
-alias lls='eza -lS'
+#alias lls='eza -lS'
 # sort by date
-alias lld='eza -lD'
-alias la='eza -la'
-alias l='eza -l'
-alias lsd='eza -d */'
-alias lla='eza -la'
-alias lsltr='eza -snew --icons'
+#alias lld='eza -lD'
+#alias la='eza -la'
+#alias l='eza -l'
+#alias lsd='eza -d */'
+#alias lla='eza -la'
+#alias lsltr='eza -snew --icons'
 alias vi="nvim"
 
 zstyle ':completion:*' menu yes select
@@ -135,3 +124,4 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export VISUAL=vim
 export EDITOR=vim
 
+export FPATH="~/git/eza/completions/zsh:$FPATH"
